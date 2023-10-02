@@ -1,5 +1,8 @@
+import ResultList from "@/components/ResultList";
 import { PageResult, SearchParams } from "@/typing";
 import { redirect } from "next/navigation";
+
+export const revalidate = 300;
 
 type Props = {
   searchParams: SearchParams;
@@ -19,10 +22,12 @@ async function SearchPage({ searchParams, params: { term } }: Props) {
   });
   const results = (await response.json()) as PageResult[];
 
-  console.log("results ---> ", results);
+  // console.log("results ---> ", results);
 
   return (
-    <div>SearchPage</div>
+    <div>
+      <ResultList results={results} term={term}/>
+    </div>
   )
 }
 

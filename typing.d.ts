@@ -19,7 +19,7 @@ type PageResult = {
 type Content = {
     url: string;
     page: number;
-    results: ResultOptions;
+    results: Results;
     last_visible_page: number;
     parse_status_code: number;
 }
@@ -27,7 +27,7 @@ type Content = {
 type Results = {
     paid: any[];
     filters: Filter[];
-    organice: Organic[];
+    organic: Organic[];
     search_information: {
         query: string;
         showing_results_for: number;
@@ -44,7 +44,7 @@ type Value = {
     value: string;
 }
 
-type Organice = {
+type Organic = {
     pos: number;
     url: string;
     type: string;
